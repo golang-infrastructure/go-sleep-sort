@@ -20,7 +20,7 @@ func SortUInt[T gtypes.Unsigned](slice []T) []T {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			time.Sleep(time.Nanosecond * time.Duration(localValue-min))
+			time.Sleep(time.Second * time.Duration(localValue-min))
 			resultChannel <- localValue
 		}()
 	}
